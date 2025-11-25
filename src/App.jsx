@@ -249,15 +249,12 @@ const App = () => {
 
   return (
     <div dir={containerDir} className="app-container">
-      <Toast
-        {...toast}
-        isRTL={isRTL}
-        onClose={() => setToast({ message: "", type: "info" })}
-      />
-
       <Header texts={texts} isRTL={isRTL} onToggleLanguage={toggleLanguage} />
 
-      <main className="main-content" role="main">
+
+
+      <main className="app-main-content" role="main">
+        <div className="form-wrapper"> {/* New wrapper for centering/card effect */}
         {step <= allSteps.length && (
           <ProgressTracker currentStep={step} steps={allSteps} isRTL={isRTL} />
         )}
@@ -321,10 +318,16 @@ const App = () => {
             </div>
           </div>
         )}
+         </div>
       </main>
 
       <Footer step={step} allSteps={allSteps} />
-
+     
+      <Toast
+        {...toast}
+        isRTL={isRTL}
+        onClose={() => setToast({ message: "", type: "info" })}
+      />   
       {(showAIModal || isAISuggesting) && (
         <AIModal
           suggestion={aiSuggestion}

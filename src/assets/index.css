@@ -5,12 +5,64 @@
   box-sizing: border-box;
 }
 
+
+/* Add this to a global stylesheet (like index.css) or inject it via a <style> tag in index.html */
+html, body, #root {
+  height: 100%; /* Important: Allows flexbox/grid to use full viewport height */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    sans-serif;
+  min-height: 100vh; /* Ensures the body covers the full viewport */
+  /* Add any global background or font styling here */
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #f3f4f6;
+}
+/* 1. Full-Height Flex Container */
+#root {
+  height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0; /* Remove padding from root to let header/footer touch edges */
+  
+  /* Use Flexbox for vertical layout: Header, Main, Footer */
+  display: flex;
+  flex-direction: column;
+  text-align: center; /* You can remove this if you manage alignment inside components */
+}
+
+/* 2. Style the main content area */
+.app-main-content {
+  /* Takes up all available vertical space */
+  flex-grow: 1; 
+  /* Center the form horizontally and potentially vertically (optional) */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically (can be removed if you prefer top alignment) */
+  padding: 2rem 1rem; /* Add responsive padding */
+  overflow-y: auto; /* Allows content to scroll if it overflows the viewport */
+}
+
+/* 3. Style the inner form wrapper (the visible card) */
+.form-wrapper {
+  /* Restrict max width of the form itself */
+  max-width: 700px; 
+  width: 100%;
+  background-color: white; /* Example background */
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: left; /* Ensure form text is aligned correctly within the card */
+}
+
+/* 4. Ensure Header/Footer span full width */
+.app-header, .app-footer {
+    width: 100%;
+    /* You may need to adjust App.jsx if you kept the main container inside a padded div */
 }
 
 .app-container {
