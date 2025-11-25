@@ -28,8 +28,10 @@ API key for OpenAI or Google Gemini
 
 📦 Installation
 1. Clone the repository
-git clone <repository-url>
+git clone (https://github.com/john5037/social-support-app-ai.git)
+git checkout master
 cd social-support-app
+
 npm install
 
 2. Setup environment variables
