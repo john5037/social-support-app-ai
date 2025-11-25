@@ -5,9 +5,10 @@ import {
   OPENAI_API_KEY,
 } from "./constants";
 
-const AI_PROVIDER = import.meta.env.VITE_AI_PROVIDER || "gemini"; // or "openai"
+const AI_PROVIDER = import.meta.env.VITE_AI_PROVIDER ; // or "openai"
 
 export const generateAISuggestion = async (field, currentText, isRTL, texts) => {
+  console.log('hello provider', AI_PROVIDER)
   if (AI_PROVIDER === "openai") {
     return await callChatGPTApi(field, currentText, isRTL, texts);
   } else {
@@ -58,6 +59,7 @@ export async function fetchWithBackoff(url, options = {}, maxRetries = 5, timeou
   }
 }
 
+
 export const callChatGPTApi = async (field, currentText, isRTL, texts) => {
 
   const fieldLabel = texts[field] || field;
@@ -79,7 +81,7 @@ export const callChatGPTApi = async (field, currentText, isRTL, texts) => {
     max_tokens: 200,
     temperature: 0.4,
   };
-
+  console.log('hello chatgpt')
   const options = {
     method: "POST",
     headers: {
