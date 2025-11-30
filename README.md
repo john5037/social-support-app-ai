@@ -15,7 +15,7 @@ Built using React, with internationalization (Arabic/RTL), form validation, auto
 ![Arabic RTL Screenshot](public/screenshots/pic2.png)
 
 ## Project URL
-https://social-support-app-d5wff44ae-john5037s-projects.vercel.app/
+https://social-support-app-ai-git-master-john5037s-projects.vercel.app/
 
 🚀 Quick Start
 Prerequisites
